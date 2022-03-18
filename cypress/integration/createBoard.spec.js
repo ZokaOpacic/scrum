@@ -10,8 +10,13 @@ describe("create board", () => {
     })
 
     it("create new board", () => {
-        createOrg.create('1111')
-        createBoard.board('cypress')
+        createOrg.create('task')
+        cy.url().should('include', '/organizations')
+        createBoard.board('zox')
+        cy.url().should('include', '/boards')
+
 
     })
+
+
 })

@@ -27,6 +27,10 @@ class CreateBoard {
         return cy.get("[name='next_btn']").contains('Next')
     }
 
+    get nextBtn() {
+        return cy.get("[name='next_btn']").contains('Next')
+    }
+
     get finishBtn() {
         return cy.get("[name='next_btn']").contains('Finish')
     }
@@ -34,9 +38,10 @@ class CreateBoard {
     board(name) {
         this.boardBtn.click()
         this.addBoardSecond.click()
-        this.boardTitleInput.type('cypress')
+        this.boardTitleInput.type(name)
         this.nextBtn.click()
         this.scrumBtn.click()
+        this.nextBtn.click()
         this.nextBtn.click()
         this.nextBtn.click()
         this.finishBtn.click()
